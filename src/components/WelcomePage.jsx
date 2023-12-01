@@ -1,9 +1,9 @@
-function WelcomePage(){
+function WelcomePage({noOfQuestions,dispatch}){
     return (
         <div style={{textAlign:'center'}}>
             <h1>Welcome to the QUIZ</h1>
-            <p>To start with the quiz click the start button</p>
-            <button>Start</button>
+            <p>{noOfQuestions} questions to test your react knowledge</p>
+            <button onClick={()=>{dispatch({ type: 'start'})}}>Start</button>
         </div>
     );
 }

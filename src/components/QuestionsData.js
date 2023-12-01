@@ -1,4 +1,4 @@
-export const questions = [
+export const questionsData = [
     {
       id: 1,
       question: "Which of the following is the correct name of React.js?",

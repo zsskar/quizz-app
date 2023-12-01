@@ -1,6 +1,6 @@
 .questions {
   display: block;
-  width: 500px;
+  width: 700px;
   height: 250px;
   margin: 0 auto;
 }
@@ -8,27 +8,27 @@
   display: table-caption;
 }
 ul button {
-  width: 400px;
-  height: 50px;
+  width: 600px;
+  height: 60px;
   border-radius: 20px;
   border-style: none;
   justify-content: center;
   cursor: pointer;
   margin-top: 5px;
-  font-size: 20px;
+  font-size: 16px;
   transition: all 0.1s ease-in-out;
   font-weight: bold;
 }
 ul button:hover {
-  width: 450px;
+  width: 650px;
   transition-duration: 0.1s;
   border: 1px solid black;
-  font-size: 22px;
+  font-size: 18px;
 }
 .buttons {
   width: 600px;
-  margin-left: 450px;
-  margin-top: 100px;
+  margin-left: 460px;
+  margin-top: 150px;
 }
 .timer {
   width: 100px;
@@ -47,3 +47,8 @@ ul button:hover {
   margin-left: 400px;
   cursor: pointer;
 }
+.progress {
+    display: block;
+    width: 700px;
+    margin: 0 auto;
+  }
