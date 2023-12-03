@@ -10,9 +10,7 @@ import { useReducer } from 'react';
 function App() {
 
   const initialStage = [];
-
-  useReducer()
-
+  useReducer();
   const show = false;
 
   return (
