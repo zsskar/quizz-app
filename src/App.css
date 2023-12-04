@@ -1,0 +1,49 @@
+.questions {
+  display: block;
+  width: 500px;
+  height: 250px;
+  margin: 0 auto;
+}
+.questions ul {
+  display: table-caption;
+}
+ul button {
+  width: 400px;
+  height: 50px;
+  border-radius: 20px;
+  border-style: none;
+  justify-content: center;
+  cursor: pointer;
+  margin-top: 5px;
+  font-size: 20px;
+  transition: all 0.1s ease-in-out;
+  font-weight: bold;
+}
+ul button:hover {
+  width: 450px;
+  transition-duration: 0.1s;
+  border: 1px solid black;
+  font-size: 22px;
+}
+.buttons {
+  width: 600px;
+  margin-left: 450px;
+  margin-top: 100px;
+}
+.timer {
+  width: 100px;
+  height: 40px;
+  font-size: 20px;
+  border-radius: 20px;
+  border-style: none;
+  border: none;
+}
+.next {
+  width: 100px;
+  height: 40px;
+  font-size: 20px;
+  border-radius: 20px;
+  border-style: none;
+  margin-left: 400px;
+  cursor: pointer;
+}
