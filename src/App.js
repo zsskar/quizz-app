@@ -22,7 +22,7 @@ function reducer(state, action) {
     case 'dataFailed': return { ...state, status: 'error' };
     case 'start': return { ...state, status: 'active' };
     case 'next': return { ...state, index: state.index + 1, answer: null };
-    case '': return { ...state };
+    case 'answer': return { ...state, answer:action.payload};
     default: throw new Error("Action unknown !");
   }
 
@@ -31,7 +31,7 @@ function reducer(state, action) {
 
 function App() {
 
-  const [{ questions, status, index, answer }, dispatch] = useReducer(reducer, initialStage);
+  const [{ questions, status, index, answer}, dispatch] = useReducer(reducer, initialStage);
 
   const noOfQuestions = questions.length;
 
@@ -46,7 +46,7 @@ function App() {
       {status === 'ready' && <WelcomePage noOfQuestions={noOfQuestions} dispatch={dispatch} />}
       {status === 'active' && <ProgressBar noOfQuestions={noOfQuestions} index={index} /> }
       {status === 'active' && <QuestionsList question={questions[index]}
-        dispatch={dispatch} noOfQuestions={noOfQuestions} index={index} />}
+        dispatch={dispatch} noOfQuestions={noOfQuestions} index={index} answer={answer} />}
     </div>
   );
 }

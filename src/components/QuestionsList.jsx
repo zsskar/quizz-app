@@ -1,6 +1,6 @@
 import Footer from "./Footer";
 
-export default function QuestionsList({ question,dispatch, noOfQuestions,index}) {
+export default function QuestionsList({ question, dispatch, noOfQuestions, index, answer}) {
     return (
         <>
             <div className='questions'>
@@ -8,7 +8,11 @@ export default function QuestionsList({ question,dispatch, noOfQuestions,index})
                 <ul>
                     {
                         question.options.map((option, index) =>
-                            <button key={index}>{option}</button>
+                            <button key={index} onClick={()=>{dispatch({type:'answer',payload:index})}}
+                            className={answer !=null ? answer === question.answer && index === answer ?'right':
+                            answer !== question.answer && index === answer ?'wrong':'restQuestions' :''}>
+                                {option}
+                            </button>
                         )}
                 </ul>
             </div>
@@ -16,3 +20,4 @@ export default function QuestionsList({ question,dispatch, noOfQuestions,index})
         </>
     );
 }
+// className={index === 3 ?'right' :'wrong'}
