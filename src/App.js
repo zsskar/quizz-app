@@ -11,7 +11,8 @@ const initialStage = {
   questions: [],
   status: 'dataReceived',
   index: 0,
-  answer: null
+  answer: null,
+  score: 0
 };
 
 function reducer(state, action) {
@@ -22,7 +23,8 @@ function reducer(state, action) {
     case 'dataFailed': return { ...state, status: 'error' };
     case 'start': return { ...state, status: 'active' };
     case 'next': return { ...state, index: state.index + 1, answer: null };
-    case 'answer': return { ...state, answer:action.payload};
+    case 'answer': const question = state.questions.at(state.index);
+      return { ...state, answer: action.payload, score: action.payload === question.answer ? state.score + question.point : state.score };
     default: throw new Error("Action unknown !");
   }
 
@@ -31,9 +33,12 @@ function reducer(state, action) {
 
 function App() {
 
-  const [{ questions, status, index, answer}, dispatch] = useReducer(reducer, initialStage);
+  const [{ questions, status, index, answer, score }, dispatch] = useReducer(reducer, initialStage);
 
   const noOfQuestions = questions.length;
+  const maxPossiblePoints = questions.reduce((prev, curr) =>
+    prev + curr.point, 0);
+
 
   useEffect(function () {
     dispatch({ type: 'dataReceived', payload: questionsData });
@@ -44,9 +49,10 @@ function App() {
     <div className="App">
       <Header />
       {status === 'ready' && <WelcomePage noOfQuestions={noOfQuestions} dispatch={dispatch} />}
-      {status === 'active' && <ProgressBar noOfQuestions={noOfQuestions} index={index} /> }
+      {status === 'active' && <ProgressBar noOfQuestions={noOfQuestions} index={index}
+        maxPossiblePoints={maxPossiblePoints} score={score} />}
       {status === 'active' && <QuestionsList question={questions[index]}
-        dispatch={dispatch} noOfQuestions={noOfQuestions} index={index} answer={answer} />}
+        dispatch={dispatch} noOfQuestions={noOfQuestions} questionIndex={index} answer={answer} />}
     </div>
   );
 }

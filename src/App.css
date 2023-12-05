@@ -1,7 +1,7 @@
 .questions {
   display: block;
   width: 700px;
-  height: 250px;
+  height: 400px;
   margin: 0 auto;
 }
 .questions ul {
@@ -27,8 +27,8 @@ ul button:hover {
 }
 .buttons {
   width: 600px;
-  margin-left: 460px;
-  margin-top: 150px;
+  margin-left: 30%;
+  display: inline-flex;
 }
 .timer {
   width: 100px;
@@ -44,12 +44,12 @@ ul button:hover {
   font-size: 20px;
   border-radius: 20px;
   border-style: none;
-  margin-left: 400px;
+  margin-left: 70%;
   cursor: pointer;
 }
 .progress {
   display: block;
-  width: 700px;
+  width: 610px;
   margin: 0 auto;
 }
 .startBtn {
@@ -84,3 +84,6 @@ ul button:hover {
   background-color: yellow;
   color: black;
 }
+/* .disable{
+  pointer-events: none;
+} */
