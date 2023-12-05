@@ -45,6 +45,7 @@ ul button:hover {
   border-radius: 20px;
   border-style: none;
   margin-left: 70%;
+  transition: all 0.1s ease-in-out;
   cursor: pointer;
 }
 .progress {
@@ -53,8 +54,8 @@ ul button:hover {
   margin: 0 auto;
 }
 .startBtn {
-  width: 100px;
-  height: 40px;
+  width: 120px;
+  height: 50px;
   border-style: none;
   border-radius: 20px;
   transition: all 0.1s ease-in-out;
@@ -63,7 +64,7 @@ ul button:hover {
 .startBtn:hover {
   background-color: grey;
   color: white;
-  margin-left: 5px;
+  margin-left: 10px;
   cursor: pointer;
   font-weight: bold;
 }
@@ -84,6 +85,8 @@ ul button:hover {
   background-color: yellow;
   color: black;
 }
-/* .disable{
+.disable{
+  opacity: 0.5;
   pointer-events: none;
-} */
+}
+
