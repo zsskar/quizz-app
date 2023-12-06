@@ -50,7 +50,7 @@ ul button:hover {
   font-weight: bold;
 }
 @keyframes blinker {
-  80% {
+  90% {
     opacity: 0;
   }
 }
