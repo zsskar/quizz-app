@@ -27,7 +27,7 @@ function reducer(state, action) {
     case 'answer': const question = state.questions.at(state.index);
       return { ...state, answer: action.payload, score: action.payload === question.answer ? state.score + question.point : state.score };
     case 'finish': return { ...state, status: 'finish', index: 0, answer: null };
-    case 'restart': return { ...state, status: 'restart',score:0 };
+    case 'restart': return { ...state, status: 'restart', score: 0 };
     default: throw new Error("Action unknown !");
   }
 
@@ -53,7 +53,7 @@ function App() {
       <Header />
       {status === 'ready' && <WelcomePage noOfQuestions={noOfQuestions} dispatch={dispatch} />}
 
-      {(status === 'active' || status === 'restart')&&
+      {(status === 'active' || status === 'restart') &&
         <>
           <ProgressBar noOfQuestions={noOfQuestions} index={index}
             maxPossiblePoints={maxPossiblePoints} score={score} />
