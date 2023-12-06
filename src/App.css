@@ -89,4 +89,34 @@ ul button:hover {
   opacity: 0.5;
   pointer-events: none;
 }
-
+.showScore{
+  width: 550px;
+  height: 100px;
+  margin: 0 auto;
+  background-color: crimson;
+  border-radius: 50px;
+  line-height: 90px;
+  text-align: center;
+  color: white;
+}
+.restart{
+  width: 100px;
+  height: 30px;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 80px;
+}
+.restart button{
+  width: 100px;
+  height: 40px;
+  border-style: none;
+  background-color: grey;
+  color: white;
+  font-weight: bold;
+}
+.restart button:hover{
+  width: 120px;
+  height: 45px;
+  font-size: 15px;
+  cursor: pointer;
+}
