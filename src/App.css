@@ -30,6 +30,12 @@ ul button:hover {
   margin-left: 30%;
   display: inline-flex;
 }
+.timeOver {
+  color: red;
+}
+.timeLeft {
+  color: green;
+}
 .timer {
   width: 100px;
   height: 40px;
@@ -37,6 +43,16 @@ ul button:hover {
   border-radius: 20px;
   border-style: none;
   border: none;
+}
+.blink {
+  animation: blinker 1s linear infinite;
+  font-size: 25px;
+  font-weight: bold;
+}
+@keyframes blinker {
+  80% {
+    opacity: 0;
+  }
 }
 .next {
   width: 100px;
@@ -73,23 +89,23 @@ ul button:hover {
   border: 1px solid black;
   font-size: 18px;
 }
-.right{
+.right {
   background-color: green;
   color: black;
 }
-.wrong{
+.wrong {
   background-color: red;
-  color:black;
+  color: black;
 }
-.restQuestions{
+.restQuestions {
   background-color: yellow;
   color: black;
 }
-.disable{
+.disable {
   opacity: 0.5;
   pointer-events: none;
 }
-.showScore{
+.showScore {
   width: 550px;
   height: 100px;
   margin: 0 auto;
@@ -99,14 +115,14 @@ ul button:hover {
   text-align: center;
   color: white;
 }
-.restart{
+.restart {
   width: 100px;
   height: 30px;
   margin: 0 auto;
   text-align: center;
   margin-top: 80px;
 }
-.restart button{
+.restart button {
   width: 100px;
   height: 40px;
   border-style: none;
@@ -114,7 +130,7 @@ ul button:hover {
   color: white;
   font-weight: bold;
 }
-.restart button:hover{
+.restart button:hover {
   width: 120px;
   height: 45px;
   font-size: 15px;
